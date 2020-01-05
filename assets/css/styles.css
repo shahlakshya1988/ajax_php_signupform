@@ -1,0 +1,18 @@
+/*** === CUSTOM STYLES ==== ***/
+body{
+	margin:0px;
+	padding:0px;
+	font-family:sans-serif;
+}
+/*** === Navigation ==== ***/
+.custom-nav{
+	background:linear-gradient(left,#f93d67,#7047d7);
+	background:-webkit-linear-gradient(left,#f93d67,#7047d7);
+	background:-moz-linear-gradient(left,#f93d67,#7047d7);
+	background:-ms-linear-gradient(left,#f93d67,#7047d7);
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+nav.custom-nav ul li a,nav.custom-nav a{
+	color:#fff !important;
+}
+/*** === Navigation ==== ***/
