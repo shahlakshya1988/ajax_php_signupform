@@ -3,6 +3,7 @@ body{
 	margin:0px;
 	padding:0px;
 	font-family:sans-serif;
+	background-color:#f3f3f2;
 }
 /*** === Navigation ==== ***/
 .custom-nav{
@@ -22,6 +23,19 @@ nav.custom-nav ul li a,nav.custom-nav a{
 /**** ==== Signup Design ====***/
 .card{
 	border-color:#7047d7;
+	position: relative;
+}
+.card::before{
+	content:" ";
+	display: block;
+	position: absolute;
+	width:100%;
+	height:300px;
+	top:10px;
+	border:1px solid #7047d7;
+	transform:rotate(10deg);
+	background:#fff;
+	z-index:-1;
 }
 .card-header{
 	color:#7047d7;
