@@ -36,14 +36,14 @@
     <div class="container">
         <div class="row">
             <!-- ==== div.col-md-7.content ==== -->
-            <div class="col-md-7 content">
+            <div class="col-md-8 content">
                 <h1>Its Always Free</h1>
                 <hr>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas soluta eos harum, dolorum velit perspiciatis aperiam labore odio quaerat adipisci consectetur cumque consequatur optio pariatur nihil culpa ut voluptatum distinctio. Hic repellat iste laboriosam vero dolorum harum nam quas, at mollitia earum necessitatibus itaque, delectus nesciunt ab, architecto obcaecati. Id.</p>
             </div>
             <!-- ==== div.col-md-7.content ==== -->
             <!-- ==== div.col-md-5.content ==== -->
-            <div class="col-md-5 content">
+            <div class="col-md-4 content">
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
@@ -81,7 +81,7 @@
                             </div>
                             <!-- div.form-group -->
                             <div class="form-group">
-                                <button type="submit" name="submit"  id="submit" class="btn btn-success btn-block">Create Account</button>
+                                <button type="submit" name="submit"  id="submit" class="btn btn-success btn-block form-btn">Create Account</button>
                             </div>
                             <!-- div.form-group -->
                         </form>

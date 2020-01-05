@@ -19,3 +19,28 @@ nav.custom-nav ul li a,nav.custom-nav a{
 .content{
 	margin-top:50px;
 }
+/**** ==== Signup Design ====***/
+.card{
+	border-color:#7047d7;
+}
+.card-header{
+	color:#7047d7;
+	background-color:#fff;
+}
+.form-heading{
+	font-weight:700;
+}
+.form-control{
+	border-color:#7047d7;
+}
+.form-btn{
+	background-color:#7047d7;
+	border:0px;
+}
+.form-btn:hover{
+	background-color:#7047d7;
+}
+.form-btn:focus{
+	background-color:#7047d7 !important;
+}
+/**** ==== Signup Design ====***/
