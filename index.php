@@ -32,6 +32,69 @@
         <!-- div.container -->
     </nav>
     <!-- ==== NAVBAR ==== -->
+	<!-- div.container -->
+    <div class="container">
+        <div class="row">
+            <!-- ==== div.col-md-7.content ==== -->
+            <div class="col-md-7 content">
+                <h1>Its Always Free</h1>
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas soluta eos harum, dolorum velit perspiciatis aperiam labore odio quaerat adipisci consectetur cumque consequatur optio pariatur nihil culpa ut voluptatum distinctio. Hic repellat iste laboriosam vero dolorum harum nam quas, at mollitia earum necessitatibus itaque, delectus nesciunt ab, architecto obcaecati. Id.</p>
+            </div>
+            <!-- ==== div.col-md-7.content ==== -->
+            <!-- ==== div.col-md-5.content ==== -->
+            <div class="col-md-5 content">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <h3 class="form-heading">Signup</h3>
+                                <!-- h3.form-heading -->
+                                <p>Account Creation is 100% Free, so please create the account</p>
+                                <!-- p -->
+                            </div>
+                            <!-- div.col-md-9 -->
+                            <div class="col-md-3 text-right">
+                                <i class="fa fa-pencil-square-o fa-3x"></i>
+                            </div>
+                            <!-- div.col-md-3.text-right  -->
+                        </div>
+                        <!-- div.row -->
+                    </div>
+                    <!-- div.card-header -->
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Enter Name">
+                            </div>
+                            <!-- div.form-group -->
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Enter Email">
+                            </div>
+                            <!-- div.form-group -->
+                            <div class="form-group">
+                                <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password">
+                            </div>
+                            <!-- div.form-group -->
+                            <div class="form-group">
+                                <input type="password" name="confirm" class="form-control" id="confirm" placeholder="Confirm Password">
+                            </div>
+                            <!-- div.form-group -->
+                            <div class="form-group">
+                                <button type="submit" name="submit"  id="submit" class="btn btn-success btn-block">Create Account</button>
+                            </div>
+                            <!-- div.form-group -->
+                        </form>
+                        <!-- form -->
+                    </div>
+                    <!-- div.card-body -->
+                </div>
+                <!-- div.card -->
+            </div>
+            <!-- ==== div.col-md-5.content ==== -->
+        </div>
+    </div>
+	<!-- div.container -->
     <script type="text/javascript" src="./assets/js/bootstrap.bundle.min.js" ></script>
 </body>
 </html>
