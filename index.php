@@ -44,52 +44,109 @@
             <!-- ==== div.col-md-7.content ==== -->
             <!-- ==== div.col-md-5.content ==== -->
             <div class="col-md-4 content">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <h3 class="form-heading">Signup</h3>
-                                <!-- h3.form-heading -->
-                                <p>Account Creation is 100% Free, so please create the account</p>
-                                <!-- p -->
+                <!-- signup form -->
+               <div class="signup-cover">                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <h3 class="form-heading">Signup</h3>
+                                    <!-- h3.form-heading -->
+                                    <p>Account Creation is 100% Free, so please create the account</p>
+                                    <!-- p -->
+                                </div>
+                                <!-- div.col-md-9 -->
+                                <div class="col-md-3 text-right">
+                                    <i class="fa fa-pencil-square-o fa-3x"></i>
+                                </div>
+                                <!-- div.col-md-3.text-right  -->
                             </div>
-                            <!-- div.col-md-9 -->
-                            <div class="col-md-3 text-right">
-                                <i class="fa fa-pencil-square-o fa-3x"></i>
-                            </div>
-                            <!-- div.col-md-3.text-right  -->
+                            <!-- div.row -->
                         </div>
-                        <!-- div.row -->
+                        <!-- div.card-header -->
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Enter Name">
+                                </div>
+                                <!-- div.form-group -->
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter Email">
+                                </div>
+                                <!-- div.form-group -->
+                                <div class="form-group">
+                                    <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password">
+                                </div>
+                                <!-- div.form-group -->
+                                <div class="form-group">
+                                    <input type="password" name="confirm" class="form-control" id="confirm" placeholder="Confirm Password">
+                                </div>
+                                <!-- div.form-group -->
+                                <div class="form-group">
+                                    <button type="submit" name="submit"  id="submit" class="btn btn-success btn-block form-btn">Create Account</button>
+                                </div>
+                                <!-- div.form-group -->
+                                <div class="form-group">
+                                    <a href="#" id="login">Already Have An Account?</a>
+                                </div>
+                            </form>
+                            <!-- form -->
+                        </div>
+                        <!-- div.card-body -->
                     </div>
-                    <!-- div.card-header -->
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Enter Name">
+                    <!-- div.card -->
+               </div>
+               <!-- div.signup-cover -->
+                <!-- signup form -->
+                <!-- Login form -->
+                <div class="login-cover">
+                    <div class="card">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <h3 class="form-heading">Login</h3>
+                                        <!-- h3.form-heading -->
+                                        <p>Enter Login &amp; Password</p>
+                                        <!-- p -->
+                                    </div>
+                                    <!-- div.col-md-9 -->
+                                    <div class="col-md-3 text-right">
+                                        <i class="fa fa-lock fa-3x"></i>
+                                    </div>
+                                    <!-- div.col-md-3.text-right  -->
+                                </div>
+                                <!-- div.row -->
                             </div>
-                            <!-- div.form-group -->
-                            <div class="form-group">
-                                <input type="email" name="email" class="form-control" id="email" placeholder="Enter Email">
+                            <!-- div.card-header -->
+                            <div class="card-body">
+                                <form>
+                                    
+                                    <div class="form-group">
+                                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter Email">
+                                    </div>
+                                    <!-- div.form-group -->
+                                    <div class="form-group">
+                                        <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password">
+                                    </div>
+                                    <!-- div.form-group -->
+                                    
+                                    <div class="form-group">
+                                        <button type="submit" name="login"  id="login" class="btn btn-success btn-block form-btn">Login</button>
+                                    </div>
+                                    <!-- div.form-group -->
+                                    <div class="form-group">
+                                        <a href="#" id="signup">Create New Account</a>
+                                    </div>
+                                    <!-- div.form-group -->
+                                </form>
+                                <!-- form -->
                             </div>
-                            <!-- div.form-group -->
-                            <div class="form-group">
-                                <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password">
-                            </div>
-                            <!-- div.form-group -->
-                            <div class="form-group">
-                                <input type="password" name="confirm" class="form-control" id="confirm" placeholder="Confirm Password">
-                            </div>
-                            <!-- div.form-group -->
-                            <div class="form-group">
-                                <button type="submit" name="submit"  id="submit" class="btn btn-success btn-block form-btn">Create Account</button>
-                            </div>
-                            <!-- div.form-group -->
-                        </form>
-                        <!-- form -->
-                    </div>
-                    <!-- div.card-body -->
+                            <!-- div.card-body -->
+                        </div>
+                        <!-- div.card -->
                 </div>
-                <!-- div.card -->
+                <!-- div.login-cover -->
+                <!-- Login form -->
             </div>
             <!-- ==== div.col-md-5.content ==== -->
         </div>
