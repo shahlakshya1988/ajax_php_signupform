@@ -36,14 +36,14 @@
     <div class="container">
         <div class="row">
             <!-- ==== div.col-md-7.content ==== -->
-            <div class="col-md-8 content">
+            <div class="col-md-7 content">
                 <h1>Its Always Free</h1>
                 <hr>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas soluta eos harum, dolorum velit perspiciatis aperiam labore odio quaerat adipisci consectetur cumque consequatur optio pariatur nihil culpa ut voluptatum distinctio. Hic repellat iste laboriosam vero dolorum harum nam quas, at mollitia earum necessitatibus itaque, delectus nesciunt ab, architecto obcaecati. Id.</p>
             </div>
             <!-- ==== div.col-md-7.content ==== -->
             <!-- ==== div.col-md-5.content ==== -->
-            <div class="col-md-4 content">
+            <div class="col-md-5 content">
                 <!-- signup form -->
                <div class="signup-cover">                    
                     <div class="card">

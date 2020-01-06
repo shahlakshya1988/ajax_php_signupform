@@ -22,8 +22,11 @@ nav.custom-nav ul li a,nav.custom-nav a{
 }
 /**** ==== Signup Design ====***/
 .card{
-	border-color:#7047d7;
+	/* border-color:#7047d7; */
+	border:0px;
 	position: relative;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+	border-radius:0px;
 }
 .card::before{
 	content:" ";
@@ -32,9 +35,9 @@ nav.custom-nav ul li a,nav.custom-nav a{
 	width:100%;
 	height:250px;
 	top:10px;
-	border:1px solid #7047d7;
-	transform:rotate(10deg);
-	background:#fff;
+	border:0px;
+	transform:rotate(-10deg);
+	background:#7047d7;
 	z-index:-1;
 }
 .card-header{
@@ -46,6 +49,7 @@ nav.custom-nav ul li a,nav.custom-nav a{
 }
 .form-control{
 	border-color:#7047d7;
+	border-radius: 0px;
 }
 .form-btn{
 	background-color:#7047d7;
@@ -57,9 +61,26 @@ nav.custom-nav ul li a,nav.custom-nav a{
 .form-btn:focus{
 	background-color:#7047d7 !important;
 }
+.fa-pencil-square-o{
+	animation:icon-animate 2s infinite;
+}
+.form-heading{
+	font-weight: 900;
+	letter-spacing: 2px;
+}
 /**** ==== Signup Design ====***/
 /* ==== login ====*/
 .login-cover{
 	display:none;
 }
+.fa-lock{
+	animation:icon-animate 2s infinite;
+}
 /* ==== login ====*/
+
+@keyframes icon-animate{
+	100%{
+		transform:rotate(360deg);
+	}
+	
+}
