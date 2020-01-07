@@ -4,6 +4,8 @@ var pattern = /^[abc]+$/; // only accept a,b,c,ab,ac,abc only
 var pattern = /^[a-z]+$/; // only accept a to z only
 var pattern = /^[A-Z]+$/; // only accept A to Z only
 var pattern = /^[A-Za-z]+$/; // only accept A to Z and a to z only
+var pattern = /^[A-Za-z]*$/; // only accept A to Z and a to z or blank only
+var pattern = /^[-]*$/; // only accept A to Z and a to z or blank only
 if(pattern.test(name)){
     alert(name+" Pattern Match");
 }else{
@@ -75,6 +77,18 @@ if(pattern.test(name)){
 }
 
 name = "22222-2222";
+if(pattern.test(name)){
+    alert(name+" pattern Match");
+}else{
+    alert(name+" pattern Not Matching");
+}
+name = "-";
+if(pattern.test(name)){
+    alert(name+" pattern Match");
+}else{
+    alert(name+" pattern Not Matching");
+}
+name = "";
 if(pattern.test(name)){
     alert(name+" pattern Match");
 }else{
