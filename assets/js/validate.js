@@ -101,9 +101,15 @@ if(pattern.test(name)){
  * cannot start from number, special character like _, ., -
  * 
 */
+/*
 email = "gmail@example.com"
 emailPattern=/^[a-zA-Z]+(_|\.)?[a-zA-Z0-9]*@[a-zA-Z]+\.[a-z]+$/i;
 alert(emailPattern.test(email));
 if(emailPattern.test(email)){
 
-}
+} */
+// validate password 
+var password = "admin123A";
+var password = "admin1A";
+var pattern = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
+alert(pattern.test(password));
