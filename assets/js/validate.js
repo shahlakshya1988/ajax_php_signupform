@@ -1,5 +1,5 @@
 var name = "a";
-var pattern = /^[abc]$/; // only accept a,b,c only
+/*var pattern = /^[abc]$/; // only accept a,b,c only
 var pattern = /^[abc]+$/; // only accept a,b,c,ab,ac,abc only
 var pattern = /^[a-z]+$/; // only accept a to z only
 var pattern = /^[A-Z]+$/; // only accept A to Z only
@@ -93,4 +93,17 @@ if(pattern.test(name)){
     alert(name+" pattern Match");
 }else{
     alert(name+" pattern Not Matching");
+}
+*/ 
+
+/**   
+ * Rules 
+ * cannot start from number, special character like _, ., -
+ * 
+*/
+email = "gmail@example.com"
+emailPattern=/^[a-zA-Z]+(_|\.)?[a-zA-Z0-9]*@[a-zA-Z]+\.[a-z]+$/i;
+alert(emailPattern.test(email));
+if(emailPattern.test(email)){
+
 }
