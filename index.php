@@ -68,6 +68,9 @@
                             <form>
                                 <div class="form-group">
                                     <input type="text" name="name" class="form-control" id="name" placeholder="Enter Name">
+                                    <div class="name-error error">
+
+                                    </div>
                                 </div>
                                 <!-- div.form-group -->
                                 <div class="form-group">

@@ -102,3 +102,11 @@ nav.custom-nav ul li a,nav.custom-nav a{
 	}
 	
 }
+
+.border-red{
+	border:1px solid #980000 !important;
+	color:#980000 !important;
+}
+.error{
+	color:#980000 !important;
+}
