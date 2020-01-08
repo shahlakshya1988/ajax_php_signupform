@@ -1,5 +1,6 @@
+/*
 var name = "a";
-/*var pattern = /^[abc]$/; // only accept a,b,c only
+var pattern = /^[abc]$/; // only accept a,b,c only
 var pattern = /^[abc]+$/; // only accept a,b,c,ab,ac,abc only
 var pattern = /^[a-z]+$/; // only accept a to z only
 var pattern = /^[A-Z]+$/; // only accept A to Z only
@@ -107,9 +108,9 @@ emailPattern=/^[a-zA-Z]+(_|\.)?[a-zA-Z0-9]*@[a-zA-Z]+\.[a-z]+$/i;
 alert(emailPattern.test(email));
 if(emailPattern.test(email)){
 
-} */
+} 
 // validate password 
 var password = "admin123A";
 var password = "admin1A";
 var pattern = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
-alert(pattern.test(password));
+alert(pattern.test(password));*/
