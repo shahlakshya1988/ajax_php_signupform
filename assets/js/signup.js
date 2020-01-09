@@ -48,6 +48,18 @@ $(document).ready(function(){
             email = "";
 
        }else{
+
+        /**** we will check for email in ajax request */
+        $.ajax({
+            type:'POST',
+            url:'ajax/signup.php',
+            data:{check_email:email_store},
+            success:function(data){
+                        alert(data);
+                    }
+
+        });
+        /**** we will check for email in ajax request */
             $(this).removeClass("border-red");
             $(this).addClass("border-green");
             $(".email-error").html("");
