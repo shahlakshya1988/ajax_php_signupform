@@ -54,8 +54,10 @@ $(document).ready(function(){
             type:'POST',
             url:'ajax/signup.php',
             data:{check_email:email_store},
+            dataType:'JSON',
             success:function(data){
-                        alert(data);
+                        console.log(data);
+                        alert(data["name"]+" "+data["email"]+" "+data["address"]);
                     }
 
         });
