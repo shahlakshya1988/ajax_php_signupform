@@ -107,6 +107,10 @@ nav.custom-nav ul li a,nav.custom-nav a{
 	border:1px solid #980000 !important;
 	color:#980000 !important;
 }
+.border-green{
+	border:1px solid #009800 !important;
+	color:#009800;
+}
 .error{
 	color:#980000 !important;
 }
