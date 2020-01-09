@@ -75,6 +75,9 @@
                                 <!-- div.form-group -->
                                 <div class="form-group">
                                     <input type="email" name="email" class="form-control" id="email" placeholder="Enter Email">
+                                    <div class="email-error error">
+
+                                    </div>
                                 </div>
                                 <!-- div.form-group -->
                                 <div class="form-group">

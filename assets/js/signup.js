@@ -5,6 +5,7 @@ $(document).ready(function(){
     var password = "";
     var confirm = "";
     var name_reg = /^[a-z ]+$/i;
+    var email_reg = /^[a-z]+[0-9a-zA-Z_\.]*@[a-z_]+\.[a-z]+$/i;
     /****  ==== NAME VALIDATION ==== */
     $("#name").focusout(function(){
         // alert("input name");
@@ -29,4 +30,31 @@ $(document).ready(function(){
         }
     });
     /****  ==== NAME VALIDATION ==== */
+
+    /*** 
+    * Email Validation
+    */
+   $("#email").focusout(function(){
+       var email_store = $(this).val().trim();
+       if(email_store.length == 0 || email_store.length == ""){
+            $(this).removeClass("border-green");
+            $(this).addClass("border-red");
+            $(".email-error").html("Email is required");
+            email = "";
+       }else if(!email_reg.test(email_store)){
+            $(this).removeClass("border-green");
+            $(this).addClass("border-red");
+            $(".email-error").html("Proper Email is required");
+            email = "";
+
+       }else{
+            $(this).removeClass("border-red");
+            $(this).addClass("border-green");
+            $(".email-error").html("");
+            email=email_store;
+       }
+   });
+   /*** 
+    * Email Validation
+    */
 });
