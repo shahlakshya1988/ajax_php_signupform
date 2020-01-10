@@ -114,3 +114,9 @@ nav.custom-nav ul li a,nav.custom-nav a{
 .error{
 	color:#980000 !important;
 }
+
+
+.fa-spinner{
+    font-size:16px;
+    color:#7047d7;
+}
