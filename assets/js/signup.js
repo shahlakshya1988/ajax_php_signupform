@@ -6,6 +6,7 @@ $(document).ready(function () {
     var confirm = "";
     var name_reg = /^[a-z ]+$/i;
     var email_reg = /^[a-z]+[0-9a-zA-Z_\.]*@[a-z_]+\.[a-z]+$/i;
+    var password_reg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
     /****  ==== NAME VALIDATION ==== */
     $("#name").focusout(function () {
         // alert("input name");
@@ -81,9 +82,38 @@ $(document).ready(function () {
             });
             /**** we will check for email in ajax request */
 
+           
+
         }
     });
     /*** 
      * Email Validation
+     */
+
+      /*** 
+     * Password Validation
+     */
+        $("#password").focusout(function(){
+            var password_store = $(this).val().trim();
+            if(password_store.length == '' || password_store.length == 0){
+                $(".password-error").html("Password Required");
+                $("#password").addClass("border-red");
+                $("#password").removeClass("border-green");
+                password = '';
+            }else if(!password_reg.test(password_store)){
+                $(".password-error").html("Password Should Be Mininum 8 Chars, Have One Capital, small-case, Number");
+                $("#password").addClass("border-red");
+                $("#password").removeClass("border-green");
+                password = '';
+            }else{
+                $(this).removeClass("border-red");
+                $(this).addClass("border-green");
+                $(".password-error").html("");
+                password = password_store;
+            }
+        });
+
+      /*** 
+     * Password Validation
      */
 });

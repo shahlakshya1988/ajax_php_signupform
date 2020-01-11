@@ -82,6 +82,9 @@
                                 <!-- div.form-group -->
                                 <div class="form-group">
                                     <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password">
+                                    <div class="password-error error">
+                                        
+                                    </div>
                                 </div>
                                 <!-- div.form-group -->
                                 <div class="form-group">
