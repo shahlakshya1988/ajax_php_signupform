@@ -65,7 +65,7 @@ $(document).ready(function () {
                         if (feedback["error"] == "email_success") {
                             $(this).removeClass("border-red");
                             $(this).addClass("border-green");
-                            $(".email-error").html("Available");
+                            $(".email-error").html("<div class='text-success'><i class='fa fa-check-circle'></i> Available</div>");
                             email = email_store;
                         } else if (feedback["error"] == "email_fail") {
                             $(this).removeClass("border-green");
