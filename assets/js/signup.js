@@ -214,11 +214,11 @@ $(document).ready(function () {
                  url:"ajax/signup.php?signup=true",
                 data:$("#singupSubmit").serialize(),   
                 dataType:"JSON",            
-                success:function(data){
-                    alert("Working");
-                    alert(data);
-                            console.log(data);
+                success:function(feedback){
+                        if(feedback["error"]=="success"){
+                            alert("Success");
                         }
+                    }
             });
         }
     });

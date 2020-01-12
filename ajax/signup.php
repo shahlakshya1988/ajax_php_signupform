@@ -28,6 +28,7 @@ if(isset($_POST["check_email"]) && !empty(trim($_POST["check_email"]))){
 if(isset($_GET["signup"]) && !empty(trim($_GET["signup"])) && trim($_GET["signup"])=="true" ){
     //var_dump($_REQUEST);
     //var_dump("Hello");
+    //var_dump("workindg");
     function signup_submit(){
         GLOBAL $db;
         //echo json_encode($_REQUEST);die();
@@ -35,9 +36,28 @@ if(isset($_GET["signup"]) && !empty(trim($_GET["signup"])) && trim($_GET["signup
         $name = trim($_POST["name"]);
         $email = trim($_POST["email"]);
         $password = trim($_POST["password"]);
+        $password_hash = password_hash($password,PASSWORD_DEFAULT);
         $confirm = trim($_POST["confirm"]);
        // echo $name;
-        echo json_encode($_REQUEST);
+       if(!empty($name) && !empty($email)  && !empty($password) && !empty($confirm) && $confirm == $password){
+            $stmt = $db->prepare("INSERT INTO `users` (`id`,`name`,`email`,`password`,`image`) values (:id,:name,:email,:password,:image)");
+            $stmt->bindValue(":id",NULL);
+            $stmt->bindParam(":name",$name);
+            $stmt->bindParam(":email",$email);
+            $stmt->bindParam(":password",$password_hash);
+            $stmt->bindValue(":image"," ");
+            $stmt->execute();
+            if($stmt->rowCount()){
+                $lastInsertId = $db->lastInsertId(); 
+                $_SESSION["user_name"] = $name;           
+                $_SESSION["id"] = $lastInsertId;           
+                echo json_encode(array("error"=>"success","msg"=>"success.php"));
+            }else{
+                 echo json_encode(array("error"=>"error","insert"=>$stmt->rowCount(),"erorr"=>$stmt->errorInfo()));
+            }
+           
+       }
+        // echo json_encode(array("password"=>$password));
     }
     signup_submit();
 }
