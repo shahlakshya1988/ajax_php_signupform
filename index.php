@@ -89,6 +89,9 @@
                                 <!-- div.form-group -->
                                 <div class="form-group">
                                     <input type="password" name="confirm" class="form-control" id="confirm" placeholder="Confirm Password">
+                                    <div class="confirm-error error">
+                                        
+                                    </div>
                                 </div>
                                 <!-- div.form-group -->
                                 <div class="form-group">

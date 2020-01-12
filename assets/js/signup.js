@@ -116,4 +116,34 @@ $(document).ready(function () {
       /*** 
      * Password Validation
      */
+    /***
+
+
+    /**
+     * Confirm Password Validation
+     */
+    $("#confirm").focusout(function(){
+        var confirm_store = $(this).val().trim();
+        if(confirm_store.length == "" || confirm_store.length == 0){
+            $(".confirm-error").html("Confirm Password Required");
+            $("#confirm").addClass("border-red");
+            $("#confirm").removeClass("border-green");
+            confirm = "";
+        }else if(confirm_store != password){
+            $(".confirm-error").html("Confirm Password and Password Should Be Same");
+            $("#confirm").addClass("border-red");
+            $("#confirm").removeClass("border-green");
+            confirm = "";
+        }else{
+            $(this).removeClass("border-red");
+            $(this).addClass("border-green");
+            $(".confirm-error").html("<div class='text-success'><i class='fa fa-check-circle'>Your Password Is Strong</i></div>");
+            confirm = confirm_store;
+        }
+
+    });
+
+    /**
+     * Confirm Password Validation
+     */
 });
