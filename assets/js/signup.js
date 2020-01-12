@@ -51,6 +51,7 @@ $(document).ready(function () {
         } else {
 
             /**** we will check for email in ajax request */
+           //alert(email_store);
             $.ajax({
                 type: 'POST',
                 url: 'ajax/signup.php',
@@ -60,21 +61,22 @@ $(document).ready(function () {
                 dataType: 'JSON',
                 beforeSend: function () {
                     $(".email-error").html('<i class="fa fa-spinner fa-pluse fa-1x fa-fw"></i>');
+                    //alert(email_store);
                 },
                 success: function (feedback) {
-                    setTimeout(function () {
-                        if (feedback["error"] == "email_success") {
-                            $(this).removeClass("border-red");
-                            $(this).addClass("border-green");
-                            $(".email-error").html("<div class='text-success'><i class='fa fa-check-circle'></i> Available</div>");
-                            email = email_store;
-                        } else if (feedback["error"] == "email_fail") {
-                            $(this).removeClass("border-green");
-                            $(this).addClass("border-red");
-                            $(".email-error").html("Sorry this email already exists!");
-                            email = "";
-                        }
-                    }, 3000);
+                    //alert(feedback);
+                    //console.log(feedback);
+                   if (feedback["error"] == "email_success") {
+                       $("#email").removeClass("border-red");
+                       $("#email").addClass("border-green");
+                       $(".email-error").html("<div class='text-success'><i class='fa fa-check-circle'></i> Available</div>");
+                       email = email_store;
+                   } else if (feedback["error"] == "email_fail") {
+                       $("#email").removeClass("border-green");
+                       $("#email").addClass("border-red");
+                       $(".email-error").html("Sorry this email already exists!");
+                       email = "";
+                   }
 
 
                 }
@@ -167,7 +169,7 @@ $(document).ready(function () {
             $("#email").removeClass("border-green");
             $("#email").addClass("border-red");
             $(".email-error").html("Enter Proper Email Address");
-            name = "";
+           
 
         } else {
             // alert(store);
@@ -179,7 +181,7 @@ $(document).ready(function () {
             $("#password").removeClass("border-green");
             $("#password").addClass("border-red");
             $(".password-error").html("Enter Proper Password");
-            name = "";
+           
 
         } else {
             // alert(store);
@@ -191,13 +193,33 @@ $(document).ready(function () {
             $("#confirm").removeClass("border-green");
             $("#confirm").addClass("border-red");
             $(".confirm-error").html("Enter Proper Password");
-            name = "";
+            
 
         } else {
             // alert(store);
             $("#confirm").removeClass("border-red");
             $("#confirm").addClass("border-green");
             $(".confirm-error").html("");
+        }
+        //console.log(name.trim() != "");
+        //console.log( email.trim() != "");
+        //console.log( password.trim()!= "");
+        //console.log( confirm.trim()!="");
+        //console.log($("#singupSubmit").serialize());
+        
+        if(name.trim() != "" && email.trim() != "" && password.trim()!= "" && confirm.trim()!=""){
+           // alert("Request");
+            $.ajax({
+                type:"POST",
+                 url:"ajax/signup.php?signup=true",
+                data:$("#singupSubmit").serialize(),   
+                dataType:"JSON",            
+                success:function(data){
+                    alert("Working");
+                    alert(data);
+                            console.log(data);
+                        }
+            });
         }
     });
     /**

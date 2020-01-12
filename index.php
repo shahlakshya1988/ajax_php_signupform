@@ -65,37 +65,37 @@
                         </div>
                         <!-- div.card-header -->
                         <div class="card-body">
-                            <form>
+                            <form id="singupSubmit">
                                 <div class="form-group">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Enter Name">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Enter Name" value="somename">
                                     <div class="name-error error">
 
                                     </div>
                                 </div>
                                 <!-- div.form-group -->
                                 <div class="form-group">
-                                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter Email">
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter Email" value="example1@example.com">
                                     <div class="email-error error">
 
                                     </div>
                                 </div>
                                 <!-- div.form-group -->
                                 <div class="form-group">
-                                    <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password">
+                                    <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password" value="123Hello1988">
                                     <div class="password-error error">
                                         
                                     </div>
                                 </div>
                                 <!-- div.form-group -->
                                 <div class="form-group">
-                                    <input type="password" name="confirm" class="form-control" id="confirm" placeholder="Confirm Password">
+                                    <input type="password" name="confirm" class="form-control" id="confirm" placeholder="Confirm Password"  value="123Hello1988">
                                     <div class="confirm-error error">
                                         
                                     </div>
                                 </div>
                                 <!-- div.form-group -->
                                 <div class="form-group">
-                                    <button type="submit" name="submit"  id="submit" class="btn btn-success btn-block form-btn">Create Account</button>
+                                    <button type="submit" name="submit" value="singup"  id="submit" class="btn btn-success btn-block form-btn">Create Account</button>
                                 </div>
                                 <!-- div.form-group -->
                                 <div class="form-group">
