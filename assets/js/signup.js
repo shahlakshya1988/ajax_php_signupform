@@ -146,4 +146,61 @@ $(document).ready(function () {
     /**
      * Confirm Password Validation
      */
+    /**
+     * submiting the form
+     */
+    $("#submit").click(function(e){
+        e.preventDefault();
+        if(name.trim() == ""){
+            $("#name").removeClass("border-green");
+            $("#name").addClass("border-red");
+            $(".name-error").html("Enter Proper Name");
+          
+
+        } else {
+            // alert(store);
+            $("#name").removeClass("border-red");
+            $("#name").addClass("border-green");
+            $(".name-error").html("");
+        }
+        if(email.trim() == ""){
+            $("#email").removeClass("border-green");
+            $("#email").addClass("border-red");
+            $(".email-error").html("Enter Proper Email Address");
+            name = "";
+
+        } else {
+            // alert(store);
+            $("#email").removeClass("border-red");
+            $("#email").addClass("border-green");
+            $(".email-error").html("");
+        }
+        if(password.trim() == ""){
+            $("#password").removeClass("border-green");
+            $("#password").addClass("border-red");
+            $(".password-error").html("Enter Proper Password");
+            name = "";
+
+        } else {
+            // alert(store);
+            $("#password").removeClass("border-red");
+            $("#password").addClass("border-green");
+            $(".password-error").html("");
+        }
+        if(confirm.trim() == ""){
+            $("#confirm").removeClass("border-green");
+            $("#confirm").addClass("border-red");
+            $(".confirm-error").html("Enter Proper Password");
+            name = "";
+
+        } else {
+            // alert(store);
+            $("#confirm").removeClass("border-red");
+            $("#confirm").addClass("border-green");
+            $(".confirm-error").html("");
+        }
+    });
+    /**
+     * submiting the form
+     */
 });
