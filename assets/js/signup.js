@@ -66,17 +66,19 @@ $(document).ready(function () {
                 success: function (feedback) {
                     //alert(feedback);
                     //console.log(feedback);
-                   if (feedback["error"] == "email_success") {
-                       $("#email").removeClass("border-red");
-                       $("#email").addClass("border-green");
-                       $(".email-error").html("<div class='text-success'><i class='fa fa-check-circle'></i> Available</div>");
-                       email = email_store;
-                   } else if (feedback["error"] == "email_fail") {
-                       $("#email").removeClass("border-green");
-                       $("#email").addClass("border-red");
-                       $(".email-error").html("Sorry this email already exists!");
-                       email = "";
-                   }
+                  setTimeout(function(){
+                    if (feedback["error"] == "email_success") {
+                        $("#email").removeClass("border-red");
+                        $("#email").addClass("border-green");
+                        $(".email-error").html("<div class='text-success'><i class='fa fa-check-circle'></i> Available</div>");
+                        email = email_store;
+                    } else if (feedback["error"] == "email_fail") {
+                        $("#email").removeClass("border-green");
+                        $("#email").addClass("border-red");
+                        $(".email-error").html("Sorry this email already exists!");
+                        email = "";
+                    }
+                  },3000);
 
 
                 }
@@ -213,11 +215,17 @@ $(document).ready(function () {
                 type:"POST",
                  url:"ajax/signup.php?signup=true",
                 data:$("#singupSubmit").serialize(),   
-                dataType:"JSON",            
+                dataType:"JSON", 
+                beforeSend:function(){
+                    $(".show-progress").addClass("progress");
+                },       
                 success:function(feedback){
-                        if(feedback["error"]=="success"){
-                            alert("Success");
-                        }
+                       setTimeout(function(){
+                        $(".show-progress").removeClass("progress");
+                            if(feedback["error"]=="success"){
+                                location = feedback["msg"];
+                            }
+                       },3000);
                     }
             });
         }

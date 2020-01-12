@@ -66,6 +66,9 @@
                         <!-- div.card-header -->
                         <div class="card-body">
                             <form id="singupSubmit">
+                                <div class="form-group show-progress ">
+                                    
+                                </div>
                                 <div class="form-group">
                                     <input type="text" name="name" class="form-control" id="name" placeholder="Enter Name" value="somename">
                                     <div class="name-error error">

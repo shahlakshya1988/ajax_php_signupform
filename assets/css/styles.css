@@ -120,3 +120,26 @@ nav.custom-nav ul li a,nav.custom-nav a{
     font-size:16px;
     color:#7047d7;
 }
+
+.progress{
+	width:100%;
+	height: 4px;
+	position: relative;
+	background:#7047d7;
+}
+.progress:before{
+	position: absolute;
+	content: " ";
+	width:0%;
+	height: 4px;
+	top:0px;
+	left:0px;
+	background:orange;
+	animation:wait 3s infinite;
+}
+@keyframes wait{
+	
+	100%{
+		width:100%;
+	}
+}
