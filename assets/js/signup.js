@@ -101,14 +101,14 @@ $(document).ready(function () {
                 $("#password").removeClass("border-green");
                 password = '';
             }else if(!password_reg.test(password_store)){
-                $(".password-error").html("Password Should Be Mininum 8 Chars, Have One Capital, small-case, Number");
+                $(".password-error").html("Password Should Be Mininum 8 Chars, Have One Capital, One Lower and One Number");
                 $("#password").addClass("border-red");
                 $("#password").removeClass("border-green");
                 password = '';
             }else{
                 $(this).removeClass("border-red");
                 $(this).addClass("border-green");
-                $(".password-error").html("");
+                $(".password-error").html("<div class='text-success'><i class='fa fa-check-circle'>Your Password Is Strong</i></div>");
                 password = password_store;
             }
         });
