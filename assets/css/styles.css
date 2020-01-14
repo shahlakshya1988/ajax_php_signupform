@@ -135,11 +135,19 @@ nav.custom-nav ul li a,nav.custom-nav a{
 	top:0px;
 	left:0px;
 	background:orange;
-	animation:wait 3s infinite;
+	animation:wait 1s infinite;
 }
 @keyframes wait{
 	
 	100%{
 		width:100%;
 	}
+}
+
+.success-area{
+	background:#fff;
+	margin-top:50px;
+	padding:20px;
+	color:#009800;
+	text-align: center;
 }
