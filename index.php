@@ -107,11 +107,19 @@
                                 <form>
                                     
                                     <div class="form-group">
-                                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter Email">
+                                        <input type="email" name="email" class="form-control" id="login-email" placeholder="Enter Email">
+                                        <div class="login-email-error error">
+                                        
+                                        </div>
+                                        <!-- div.login-email-error.error -->
                                     </div>
                                     <!-- div.form-group -->
                                     <div class="form-group">
-                                        <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password">
+                                        <input type="password" name="password" class="form-control" id="login-password" placeholder="Enter Password">
+                                        <div class="login-password-error error">
+                                        
+                                        </div>
+                                        <!-- div.login-password-error.error -->
                                     </div>
                                     <!-- div.form-group -->
                                     
