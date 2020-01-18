@@ -31,4 +31,39 @@ $(document).ready(function(){
             password = password_store;
         }
     });
+    /***  ==== submit login form==== */
+    $("#login-submit").click(function(e){
+        alert("CAlled");
+        e.preventDefault();
+        if(email.length == "" || email.length == 0){
+            $("#login-email").removeClass("border-green");
+            $("#login-email").addClass("border-red");
+            $(".login-email-error").html("Email Is Required");
+        }else if(password.length == "" || password.length == 0){
+            $("#login-password").removeClass("border-green");
+            $("#login-password").addClass("border-red");
+            $(".login-password-error").html("Password Is Required");
+        }else{
+            $.ajax({
+                url:"ajax/login.php?login_form=true",
+                type:"POST",
+                dataType:"JSON",
+                data:$("#login-form").serialize(),
+                beforeSend:function(){
+
+                },
+                success:function(feedback){
+                    console.log(feedback["msg"]);
+                    if(feedback["error"]=="success"){
+                        location = feedback["msg"];
+                    }else if(feedback["error"]=="no_password"){
+                        $(".login-error").html(feedback["msg"]);
+                    }else if(feedback["error"]=="no_email"){
+                        $(".login-error").html(feedback["msg"]);
+                    }
+                }
+            });
+        }
+    });
+    /***  ==== submit login form==== */
 });

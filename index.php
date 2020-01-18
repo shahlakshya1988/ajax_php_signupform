@@ -104,8 +104,12 @@
                             </div>
                             <!-- div.card-header -->
                             <div class="card-body">
-                                <form>
-                                    
+                                <form id="login-form">
+                                    <div class="form-group">
+                                        <div class="login-error error">
+                                            
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <input type="email" name="email" class="form-control" id="login-email" placeholder="Enter Email">
                                         <div class="login-email-error error">
@@ -124,7 +128,7 @@
                                     <!-- div.form-group -->
                                     
                                     <div class="form-group">
-                                        <button type="submit" name="login"  id="login" class="btn btn-success btn-block form-btn">Login</button>
+                                        <button type="submit" name="login"  id="login-submit" class="btn btn-success btn-block form-btn">Login</button>
                                     </div>
                                     <!-- div.form-group -->
                                     <div class="form-group">
