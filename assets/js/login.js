@@ -33,7 +33,7 @@ $(document).ready(function(){
     });
     /***  ==== submit login form==== */
     $("#login-submit").click(function(e){
-        alert("CAlled");
+        // alert("CAlled");
         e.preventDefault();
         if(email.length == "" || email.length == 0){
             $("#login-email").removeClass("border-green");
@@ -50,17 +50,22 @@ $(document).ready(function(){
                 dataType:"JSON",
                 data:$("#login-form").serialize(),
                 beforeSend:function(){
-
+                     $(".login-error").html(" ");
+                    $(".login-progress-div").addClass("login-progress");
                 },
                 success:function(feedback){
-                    console.log(feedback["msg"]);
-                    if(feedback["error"]=="success"){
-                        location = feedback["msg"];
-                    }else if(feedback["error"]=="no_password"){
-                        $(".login-error").html(feedback["msg"]);
-                    }else if(feedback["error"]=="no_email"){
-                        $(".login-error").html(feedback["msg"]);
-                    }
+                    //console.log(feedback["msg"]);
+                    setTimeout(function(){
+                        $(".login-progress-div").removeClass("login-progress");
+                        if(feedback["error"]=="success"){
+                            location = feedback["msg"];
+                        }else if(feedback["error"]=="no_password"){
+                            $(".login-error").html(feedback["msg"]);
+                        }else if(feedback["error"]=="no_email"){
+                            $(".login-error").html(feedback["msg"]);
+                        }
+                    },3000);
+                    
                 }
             });
         }

@@ -106,6 +106,11 @@
                             <div class="card-body">
                                 <form id="login-form">
                                     <div class="form-group">
+                                        <div class="login-progress-div">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <div class="login-error error">
                                             
                                         </div>

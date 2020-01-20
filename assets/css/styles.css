@@ -135,8 +135,28 @@ nav.custom-nav ul li a,nav.custom-nav a{
 	top:0px;
 	left:0px;
 	background:orange;
-	animation:wait 1s infinite;
+	animation:wait 3.5s infinite;
 }
+/*** login progress code ****/
+.login-progress{
+	width:100%;
+	height: 4px;
+	position: relative;
+	background:#7047d7;
+}
+.login-progress:before{
+	position: absolute;
+	content: " ";
+	width:0%;
+	height: 4px;
+	top:0px;
+	left:0px;
+	background:#0CFB06;
+	animation:wait 3.5s infinite;
+}
+
+/*** login progress code ****/
+
 @keyframes wait{
 	
 	100%{
@@ -151,3 +171,4 @@ nav.custom-nav ul li a,nav.custom-nav a{
 	color:#009800;
 	text-align: center;
 }
+
