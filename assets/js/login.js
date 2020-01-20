@@ -58,10 +58,20 @@ $(document).ready(function(){
                     setTimeout(function(){
                         $(".login-progress-div").removeClass("login-progress");
                         if(feedback["error"]=="success"){
+                            $("#login-email").removeClass("border-red");
+                            $("#login-email").addClass("border-green");
+                            
+                            $("#login-password").removeClass("border-red");
+                            $("#login-password").addClass("border-green");
+
                             location = feedback["msg"];
                         }else if(feedback["error"]=="no_password"){
+                            $("#login-password").removeClass("border-green");
+                            $("#login-password").addClass("border-red");
                             $(".login-error").html(feedback["msg"]);
                         }else if(feedback["error"]=="no_email"){
+                            $("#login-email").removeClass("border-green");
+                            $("#login-email").addClass("border-red");
                             $(".login-error").html(feedback["msg"]);
                         }
                     },3000);
