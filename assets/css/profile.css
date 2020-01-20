@@ -4,8 +4,38 @@
 .left-area{
 	background:#fff;
 	padding:15px;
+	position: relative;
+	overflow: hidden;
+}
+.left-area::before{
+	content:"Profile";
+	position: absolute;
+	top:0px;
+	left:-30px;
+	width:150px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	transform: rotate(-40deg);
+	background:#f93d67;
+	color:#fff;
 }
 .right-area{
 	background:#fff;
 	padding:15px;
+	position: relative;
+	overflow: hidden;
+}
+.right-area::before{
+	content:"Details";
+	position: absolute;
+	top:0px;
+	right:-30px;
+	width:150px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	transform: rotate(30deg);
+	background:#7047d7;
+	color:#fff;
 }
