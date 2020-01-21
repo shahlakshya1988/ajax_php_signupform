@@ -41,10 +41,19 @@
 }
 .user_img{
 	height: 100px;
-	width: 100%;
+	width: 100px;
 	margin:0px auto;
 
 }
 .first-li{
 	margin-top:20px;
+}
+
+.list-group-item:hover a{
+	color:#fff;
+	text-decoration: none;;
+}
+
+.list-group-item:hover{
+	background-color: #7047d7;
 }
