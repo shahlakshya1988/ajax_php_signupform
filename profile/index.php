@@ -1,4 +1,7 @@
-<?php require_once __DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."connection".DIRECTORY_SEPARATOR."db.php"; ?>
+<?php 
+require_once __DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."connection".DIRECTORY_SEPARATOR."db.php"; 
+require_once __DIR__.DIRECTORY_SEPARATOR."function".DIRECTORY_SEPARATOR."func.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +21,7 @@
 		<div class="row">
 			<div class="col-md-3">
 				<div class="left-area">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem dolorum repellat numquam odit error voluptate voluptates, nisi repellendus quasi sint recusandae iure labore natus obcaecati officia quas. Tempore reprehenderit assumenda, debitis, officia beatae aliquid, earum illo distinctio nulla expedita possimus commodi nihil, dolores cum asperiores! Perferendis, et dolorum possimus distinctio!
+					<?php links(); ?>
 				</div>
 				<!-- div.left-area -->
 			</div>
