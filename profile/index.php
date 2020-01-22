@@ -22,6 +22,12 @@ if(!isset($_SESSION["id"]) || empty($_SESSION["id"]) ){
 </head>
 <body>
 	<?php require_once __DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."parts".DIRECTORY_SEPARATOR."navigation.php"; ?>
+	<?php
+	if(isset($_SESSION["image_success"])){ ?>
+		<div class="alert alert-success text-center all-msg success-msg">
+			<?=$_SESSION["image_success"]; ?>
+		</div>
+	<?php unset($_SESSION["image_success"]); }	?>
 	<div class="container contents">
 		<div class="row">
 			<div class="col-md-3">

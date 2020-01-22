@@ -66,3 +66,7 @@
 	background:rgba(0,0,0,0.5);
 	border:1px solid #fff;
 }
+.success-msg{
+	background:#7ed56f;
+	border:0px;
+}

@@ -63,7 +63,13 @@ function update_picture(){
 			$query->bindParam(":image",$img_name);
 			$query->bindParam(":id",$_SESSION["id"]);
 			$query->execute();
-			var_dump($query->rowCount()); 
+			if($query->rowCount()){
+				$_SESSION["image_success"] = "<i class='fa fa-check-circle'></i> You Image Is Successfully Updated";
+				header("Location: index.php");
+				die();
+			}else{
+
+			}
 		}else{
 			echo '<div class="text-center text-danger">Invalid Image Extension!</div>';
 		}
