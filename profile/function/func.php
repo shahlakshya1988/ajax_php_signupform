@@ -63,7 +63,7 @@ function update_picture(){
 			$query->bindParam(":image",$img_name);
 			$query->bindParam(":id",$_SESSION["id"]);
 			$query->execute();
-			var_dump($query->rowCount());
+			var_dump($query->rowCount()); 
 		}else{
 			echo '<div class="text-center text-danger">Invalid Image Extension!</div>';
 		}
