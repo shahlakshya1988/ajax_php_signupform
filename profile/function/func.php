@@ -14,7 +14,7 @@ function links(){
 		$photo_link = "<a href='add_photo.php'>Update Photo <i class='fa fa-pencil'></i></a>";
 	}
 	if(empty(trim($result->bio))){
-		$bio = "<a href=''>Add Bio <i class='fa fa-plus-circle'></i></a>";
+		$bio = "<a href='#' data-target='#bio' data-toggle='modal'>Add Bio <i class='fa fa-plus-circle'></i></a>";
 	}else{
 		$bio = "<a href=''>Update Bio <i class='fa fa-pencil'></i></a>";
 	}
