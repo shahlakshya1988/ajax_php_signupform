@@ -11,6 +11,12 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link">Home</a>
                     </li>
+                    <?php  
+                    if(isset($_SESSION["id"]) && !empty(trim($_SESSION["id"]))){ ?>
+                        <li class="nav-item">
+                            <a href="logout.php" class="nav-link btn-success logout-btn">Logout</a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
             <!-- div.collapse .navbar-collapse-->

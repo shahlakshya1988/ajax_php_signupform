@@ -57,3 +57,12 @@
 .list-group-item:hover{
 	background-color: #7047d7;
 }
+.logout-btn{
+	background:rgba(0,0,0,0.1);
+	border:1px solid #fff;
+	border-radius: 30px;
+}
+.logout-btn:hover{
+	background:rgba(0,0,0,0.5);
+	border:1px solid #fff;
+}

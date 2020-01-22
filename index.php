@@ -1,6 +1,11 @@
 <?php require_once __DIR__.DIRECTORY_SEPARATOR."parts".DIRECTORY_SEPARATOR."header.php"; ?>
     <!-- ==== NAVBAR ==== -->
     <?php require_once __DIR__.DIRECTORY_SEPARATOR."parts".DIRECTORY_SEPARATOR."navigation.php"; ?>
+    <?php if(isset($_SESSION["unauthorized"]) && $_SESSION["unauthorized"]){ ?>
+    <div class="alert alert-danger text-center all-msg">
+        <strong>Please Enter Your Email and Password</strong>
+    </div>
+    <?php } ?>
     <!-- ==== NAVBAR ==== -->
 	<!-- div.container -->
     <div class="container">
@@ -116,7 +121,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" name="email" class="form-control" id="login-email" placeholder="Enter Email">
+                                        <input type="email" name="email" class="form-control" id="login-email" placeholder="Enter Email" value="example1@example.com">
                                         <div class="login-email-error error">
                                         
                                         </div>
@@ -124,7 +129,7 @@
                                     </div>
                                     <!-- div.form-group -->
                                     <div class="form-group">
-                                        <input type="password" name="password" class="form-control" id="login-password" placeholder="Enter Password">
+                                        <input type="password" name="password" class="form-control" id="login-password" placeholder="Enter Password" value="123Hello1988">
                                         <div class="login-password-error error">
                                         
                                         </div>
