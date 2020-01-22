@@ -8,10 +8,10 @@ function links(){
 	// var_dump($result);
 	if(empty(trim($result->image))){
 		$photo = "<img src='./img/no_img.png' class='user_img'/>";
-		$photo_link = "<a href=''>Update Photo <i class='fa fa-pencil'></i></a>";
+		$photo_link = "<a href='add_photo.php'>Update Photo <i class='fa fa-pencil'></i></a>";
 	}else{
 		$photo = "<img src='./img/{$result->image}' class='user_img'>";
-		$photo_link = "<a href=''>Update Photo <i class='fa fa-pencil'></i></a>";
+		$photo_link = "<a href='add_photo.php'>Update Photo <i class='fa fa-pencil'></i></a>";
 	}
 	if(empty(trim($result->bio))){
 		$bio = "<a href=''>Add Bio <i class='fa fa-plus-circle'></i></a>";
@@ -38,5 +38,35 @@ function links(){
 		<li class='list-group-item'><a href=''>Update Name <i class='fa fa-pencil'></i> </a></li>	
 	</ul>";
 	//echo "<br>Links Area Goes here<br>";
+}
+function update_picture(){
+	global $db;
+	if(isset($_POST["picture"])){
+		$img_name = strtolower($_FILES["file"]["name"]);
+		$img_tmp_name = $_FILES["file"]["tmp_name"];
+		$img_error = $_FILES["file"]["error"];
+		$img_size = $_FILES["file"]["size"];
+		$store = "img/";
+		$extensions = array("png","PNG","jpg","JPG","jpeg","JPEG");
+		$image_name_array = explode(".",$img_name);
+		$img_extension = end($image_name_array);
+		
+		if(in_array($img_extension,$extensions)){
+			$count =1;
+			$newname = uniqid(true);
+			while(file_exists($store.$img_name)){
+				$img_name =$count."_".$newname.".".$img_extension;
+				$count++;
+			}
+			move_uploaded_file($img_tmp_name,$store.$img_name);
+			$query = $db->prepare("UPDATE `users` SET `image` = :image WHERE `id` = :id LIMIT 1");
+			$query->bindParam(":image",$img_name);
+			$query->bindParam(":id",$_SESSION["id"]);
+			$query->execute();
+			var_dump($query->rowCount());
+		}else{
+			echo '<div class="text-center text-danger">Invalid Image Extension!</div>';
+		}
+	}
 }
 ?>
