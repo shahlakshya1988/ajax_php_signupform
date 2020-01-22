@@ -5,7 +5,7 @@
     <div class="alert alert-danger text-center all-msg">
         <strong>Please Enter Your Email and Password</strong>
     </div>
-    <?php } ?>
+    <?php unset($_SESSION["unauthorized"]); } ?>
     <!-- ==== NAVBAR ==== -->
 	<!-- div.container -->
     <div class="container">

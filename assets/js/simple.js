@@ -9,5 +9,8 @@ $(document).ready(function(){
     });
     $(".success-area").fadeOut(0);
     $(".success-area").fadeIn(5000);
+    setTimeout(function(){
+        $(".all-msg").slideUp("slow");
+    },3000);
 
 });
