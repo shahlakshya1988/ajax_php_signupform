@@ -16,17 +16,17 @@ function links(){
 	if(empty(trim($result->bio))){
 		$bio = "<a href='#' data-target='#bio' data-toggle='modal'>Add Bio <i class='fa fa-plus-circle'></i></a>";
 	}else{
-		$bio = "<a href=''>Update Bio <i class='fa fa-pencil'></i></a>";
+		$bio = "<a href='#' data-target='#bio' data-toggle='modal'>Update Bio <i class='fa fa-pencil'></i></a>";
 	}
 	if(empty(trim($result->facebook))){
-		$facebook = "<a href=''>Add Facebook <i class='fa fa-plus-circle'></i></a>";
+		$facebook = "<a href='#' data-target='#facebookModal' data-toggle='modal'>Add Facebook <i class='fa fa-plus-circle'></i></a>";
 	}else{
-		$facebook = "<a href=''>Update Facebook <i class='fa fa-pencil'></i></a>";
+		$facebook = "<a href='#' data-target='#facebookModal' data-toggle='modal'>Update Facebook <i class='fa fa-pencil'></i></a>";
 	}
 	if(empty(trim($result->linkedin))){
-		$linkedin = "<a href=''>Add Linkedin <i class='fa fa-plus-circle'></i></a>";
+		$linkedin = "<a href='#' data-target='#linkedinModal' data-toggle='modal'>Add Linkedin <i class='fa fa-plus-circle'></i></a>";
 	}else{
-		$linkedin = "<a href=''>Update Linkedin <i class='fa fa-pencil'></i></a>";
+		$linkedin = "<a href='#' data-target='#linkedinModal' data-toggle='modal'>Update Linkedin <i class='fa fa-pencil'></i></a>";
 	}
 	echo "<ul class='list-group'>
 		$photo
@@ -34,8 +34,8 @@ function links(){
 		<li class='list-group-item'>$bio</li>
 		<li class='list-group-item'>$facebook</li>
 		<li class='list-group-item'>$linkedin</li>
-		<li class='list-group-item'><a href=''>Update Password <i class='fa fa-pencil'></i> </a></li>	
-		<li class='list-group-item'><a href=''>Update Name <i class='fa fa-pencil'></i> </a></li>	
+		<li class='list-group-item'><a href='#' data-target='#passwordModal' data-toggle='modal' >Update Password <i class='fa fa-pencil'></i> </a></li>	
+		<li class='list-group-item'><a href='#' data-target='#nameModal' data-toggle='modal'>Update Name <i class='fa fa-pencil'></i> </a></li>	
 	</ul>";
 	//echo "<br>Links Area Goes here<br>";
 }
