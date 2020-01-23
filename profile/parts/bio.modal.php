@@ -21,14 +21,14 @@ if(empty(trim($result->bio))){
             </div>
             <!-- div.modal-header -->
             <div class="modal-body">
-                <form action="">
+                <form action="" id="bio_form">
                     <div class="form-group">
                         <div class="bio-error error">
                             
                         </div>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control profile_input" id="bio_textarea" name="" id="" cols="30" rows="10" placeholder="Add Bio"><?=trim($result->bio);?></textarea>
+                        <textarea class="form-control profile_input" id="bio_textarea" name="bio" id="" cols="30" rows="10" placeholder="Add Bio"><?=trim($result->bio);?></textarea>
                         <!-- textarea.form-control#bio_textarea -->
                     </div>
                     <!-- div.form-group -->

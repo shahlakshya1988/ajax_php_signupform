@@ -7,6 +7,23 @@ function add_bio(bio){
         
    }else{
         // ajax_request over here
+        $.ajax({
+            url:"ajax/profile.php?bio=true",
+            data:$("#bio_form").serialize(),
+            type:"POST",
+            dataType:"JSON",
+            beforeSend:function(){
+               // console.log("STarted");
+            },
+            success:function(feedback){
+                console.log(feedback);
+                if(feedback["error"]=="success"){
+                    location = "index.php";
+                }else{
+                    // alert("Sorry");
+                }
+            }
+        });
         // ajax_request over here
    }
    return false;
