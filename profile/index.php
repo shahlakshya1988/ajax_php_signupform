@@ -35,6 +35,13 @@ if(!isset($_SESSION["id"]) || empty($_SESSION["id"]) ){
 		</div>
 	<?php unset($_SESSION["bio_success"]); }	?>
 
+	<?php
+	if(isset($_SESSION["facebook_success"])){ ?>
+		<div class="alert alert-success text-center all-msg success-msg">
+			<?=$_SESSION["facebook_success"]; ?>
+		</div>
+	<?php unset($_SESSION["facebook_success"]); }	?>
+
 	<div class="container contents">
 		<div class="row">
 			<div class="col-md-3">

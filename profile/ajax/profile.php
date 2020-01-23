@@ -34,4 +34,30 @@ function bio(){
 	}
 }
 bio();
+
+function facebook(){
+	global $db;
+	if(isset($_GET["facebook"]) && !empty(trim($_GET["facebook"]))){
+		//echo json_encode($_REQUEST);
+		$get_facebook = $db->prepare("Select `facebook` from `users` where `id` = :id");
+		$get_facebook->execute(array(":id"=>$_SESSION["id"]));
+		$result_facebook = $get_facebook->fetch(PDO::FETCH_OBJ);
+		$facebook_db = trim($result_facebook->facebook);
+
+		$update_facebook = $db->prepare("UPDATE `users` SET `facebook` = :facebook WHERE `id` = :id");
+		$update_facebook->execute(array(":id"=>$_SESSION["id"],":facebook"=>trim($_POST["facebook_input"])));
+		if($update_facebook){
+			if(!empty($facebook_db)){
+				$_SESSION["facebook_success"]="<i class='fa fa-check-circle'></i> Your Facebook Have Been Successfully Update";
+				echo json_encode(array("error"=>"success"));
+			}else{
+				$_SESSION["facebook_success"]="<i class='fa fa-check-circle'></i> Your Facebook Have Been Successfully Added";
+				echo json_encode(array("error"=>"success"));
+			}
+		}else{
+			echo json_encode(array("error"=>"error"));
+		}
+	}
+}
+facebook();
 ?>
