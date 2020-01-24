@@ -42,6 +42,13 @@ if(!isset($_SESSION["id"]) || empty($_SESSION["id"]) ){
 		</div>
 	<?php unset($_SESSION["facebook_success"]); }	?>
 
+	<?php
+	if(isset($_SESSION["linkedin_success"])){ ?>
+		<div class="alert alert-success text-center all-msg success-msg">
+			<?=$_SESSION["linkedin_success"]; ?>
+		</div>
+	<?php unset($_SESSION["linkedin_success"]); }	?>
+
 	<div class="container contents">
 		<div class="row">
 			<div class="col-md-3">

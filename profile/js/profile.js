@@ -62,3 +62,29 @@ function add_facebook(facebook){
     }
     return false;
 }
+
+function add_linkedin(linkedin){
+    linkedin = linkedin.trim();
+    linkedin_pattern = /^(http|https)\:(\/\/)(www)\.linkedin\.(com)\/[a-zA-Z0-9]+$/;
+    if(linkedin.length == "" || linkedin.length == 0){
+
+    }else if(!linkedin_pattern.test(linkedin)){
+
+    }else{
+        $.ajax({
+            url:"ajax/profile.php?linkedin=true",
+            data:$("#add_linkedin_form").serialize(),
+            type:"POST",
+            dataType:"JSON",
+            beforeSend:function(){
+               // console.log($("#add_linkedin_form").serialize());
+            },
+            success:function(feedback){
+                console.log(feedback);
+                if(feedback["error"]=="success"){
+                    location = "index.php";
+                }
+            }
+        });
+    }
+}
