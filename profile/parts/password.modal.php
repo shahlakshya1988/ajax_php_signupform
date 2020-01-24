@@ -8,15 +8,15 @@
             </div>
             <!-- div.modal-header -->
             <div class="modal-body">
-                <form action="">
+                <form action="" id="update_password_form">
                     <div class="form-group">
                         <div class="password-error error">
 
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="current_password" class="form-control profile_input" id="current_password" placeholder="Enter Current Password">
-                        <!-- input.form-control#current_password -->                       
+                        <input type="password" name="old_password" class="form-control profile_input" id="old_password" placeholder="Enter Current Password">
+                        <!-- input.form-control#old_password -->                       
                     </div>
                     <!-- div.form-group -->
                     <div class="form-group">
@@ -27,7 +27,7 @@
                     <div class="modal-footer">
                         <div class="form-group">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-success" onclick="return change_password(this.form.current_password.value,this.form.new_password.value)">Save Changes</button>
+                            <button type="button" class="btn btn-success" onclick="return change_password(this.form.old_password.value,this.form.new_password.value)">Save Changes</button>
                         </div>
                         <!-- div.form-group -->
                     </div>

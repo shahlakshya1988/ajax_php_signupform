@@ -129,11 +129,18 @@ function change_password(old_password,new_password){
             dataType:"JSON",
             type:"POST",
             beforeSend:function(){
-                console.log($("#update_password_form").serialize());
+                //console.log($("#update_password_form").serialize());
             },
             success:function(feedback){
-                console.log($("#update_password_form").serialize());
+                //console.log($("#update_password_form").serialize());
                 console.log(feedback);
+                if(feedback["error"]=="success"){
+                    location="index.php";
+                }else if(feedback["error"]=="password_error"){
+                    $(".password-error").html(feedback["msg"]);
+                    $("#old_password").removeClass("border-green");
+                    $("#old_password").addClass("border-red");
+                }
             }
 
         });

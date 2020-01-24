@@ -96,9 +96,34 @@ add_linkedin();
 
 function change_password(){
 	global $db;
-	/*** getting old password, from db */
+	//echo json_encode($_REQUEST); die();
+	if(isset($_GET["password"]) && !empty(trim($_GET["password"]))){
+		/*** getting old password, from db */
+		$get_old_pass =$db->prepare("SELECT `password` from `users` where `id` = :id");
+		$get_old_pass->bindParam(":id",$_SESSION["id"]);
+		$get_old_pass->execute();
+		$result_old_pass = $get_old_pass->fetch(PDO::FETCH_OBJ);
+		$password_db = $result_old_pass->password;
+		
+		if(password_verify(trim($_POST["old_password"]),$password_db)){
+			$update_new_password = $db->prepare("UPDATE `users` SET `password` = :password where `id` = :id LIMIT 1");
+			$update_new_password->bindParam(":id",$_SESSION["id"]);
+			$crcypt_new_password = password_hash(trim($_POST["new_password"]),PASSWORD_DEFAULT);
+			$update_new_password->bindParam(":password",$crcypt_new_password);
+			$update_new_password->execute();
+			if($update_new_password){
+				$_SESSION["password_success"] = "Password Updated Successfully !!!";
+				echo json_encode(array("error"=>"success","new_password"=>trim($_POST["new_password"])));
+			}else{
+
+			}
+			
+		}else{
+			echo json_encode(array("error"=>"password_error","msg"=>"Please Enter Current Password Properly!!!"));
+		}
+		/*** getting old password, from db */
+	}
 	
-	/*** getting old password, from db */
 }
 change_password();
 ?>
