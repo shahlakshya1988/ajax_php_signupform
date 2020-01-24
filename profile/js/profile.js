@@ -67,10 +67,17 @@ function add_linkedin(linkedin){
     linkedin = linkedin.trim();
     linkedin_pattern = /^(http|https)\:(\/\/)(www)\.linkedin\.(com)\/[a-zA-Z0-9]+$/;
     if(linkedin.length == "" || linkedin.length == 0){
-
+        $(".linkedin-error").html("Linkedin Link Can't Be Empty");
+        $("#linkedin_input").addClass("border-red");
+        $("#linkedin_input").removeClass("border-green");
     }else if(!linkedin_pattern.test(linkedin)){
-
+        $(".linkedin-error").html("Linkedin Link Can't Be Empty");
+        $("#linkedin_input").addClass("border-red");
+        $("#linkedin_input").removeClass("border-green");
     }else{
+        $(".linkedin-error").html(" ");
+        $("#linkedin_input").removeClass("border-red");
+        $("#linkedin_input").addClass("border-green");
         $.ajax({
             url:"ajax/profile.php?linkedin=true",
             data:$("#add_linkedin_form").serialize(),
