@@ -93,4 +93,12 @@ function add_linkedin(){
 	}
 }
 add_linkedin();
+
+function change_password(){
+	global $db;
+	/*** getting old password, from db */
+	
+	/*** getting old password, from db */
+}
+change_password();
 ?>

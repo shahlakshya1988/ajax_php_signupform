@@ -95,3 +95,48 @@ function add_linkedin(linkedin){
         });
     }
 }
+
+function change_password(old_password,new_password){
+    var old_password = old_password.trim();
+    var new_password = new_password.trim();
+    var password_reg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
+    $("#old_password").removeClass("border-green");
+    $("#new_password").removeClass("border-green");
+    $("#old_password").removeClass("border-red");
+    $("#new_password").removeClass("border-red");
+    $(".password-error").html(" ");
+    if(old_password.length == '' || old_password.length == 0 ){
+        $(".password-error").html("Old Password Cant Be Blank");
+        $("#old_password").removeClass("border-green");
+        $("#old_password").addClass("border-red");
+    }else if(new_password.length == "" || new_password.length == 0){
+        $(".password-error").html("New Password Cant Be Blank");
+        $("#new_password").removeClass("border-green");
+        $("#new_password").addClass("border-red");
+    }else if(!password_reg.test(new_password)){
+        $(".password-error").html("Password Should Be Mininum 8 Chars, Have One Capital, One Lower and One Number");
+       $("#new_password").removeClass("border-green");
+       $("#new_password").removeClass("border-green");
+        $("#new_password").addClass("border-red");
+    }else{
+        $("#new_password").addClass("border-green");
+        $("#new_password").removeClass("border-red");
+        $("#old_password").addClass("border-green");
+        $("#old_password").removeClass("border-red");
+        $.ajax({
+            url:"ajax/profile.php?password=true",
+            data:$("#update_password_form").serialize(),
+            dataType:"JSON",
+            type:"POST",
+            beforeSend:function(){
+                console.log($("#update_password_form").serialize());
+            },
+            success:function(feedback){
+                console.log($("#update_password_form").serialize());
+                console.log(feedback);
+            }
+
+        });
+    }
+    return false;
+}

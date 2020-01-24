@@ -10,6 +10,11 @@
             <div class="modal-body">
                 <form action="">
                     <div class="form-group">
+                        <div class="password-error error">
+
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <input type="password" name="current_password" class="form-control profile_input" id="current_password" placeholder="Enter Current Password">
                         <!-- input.form-control#current_password -->                       
                     </div>
@@ -22,7 +27,7 @@
                     <div class="modal-footer">
                         <div class="form-group">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-success">Update</button>
+                            <button type="button" class="btn btn-success" onclick="return change_password(this.form.current_password.value,this.form.new_password.value)">Save Changes</button>
                         </div>
                         <!-- div.form-group -->
                     </div>
