@@ -61,6 +61,13 @@ if(!isset($_SESSION["id"]) || empty($_SESSION["id"]) ){
 			<?=$_SESSION["name_success"]; ?>
 		</div>
 	<?php unset($_SESSION["name_success"]); }	?>
+
+	<?php
+	if(isset($_SESSION["address_success"])){ ?>
+		<div class="alert alert-success text-center all-msg success-msg">
+			<?=$_SESSION["address_success"]; ?>
+		</div>
+	<?php unset($_SESSION["address_success"]); }	?>
 	
 
 	<div class="container contents">

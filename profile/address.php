@@ -6,6 +6,18 @@ if(!isset($_SESSION["id"]) || empty($_SESSION["id"]) ){
 	header("Location: ../index.php");
 	die();
 }
+/*** get previous address  */
+$get_address = $db->prepare("SELECT `address` from `users` where `id` = :id");
+$get_address->bindParam(":id",$_SESSION["id"]);
+$get_address->execute();
+$res_address = $get_address->fetch(PDO::FETCH_OBJ);
+$address_db = trim($res_address->address);
+if($address_db != ""){
+    $title = "Update Address";
+}else{
+    $title = "Add Address";
+}
+/*** get previous address  */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,20 +45,21 @@ if(!isset($_SESSION["id"]) || empty($_SESSION["id"]) ){
 			<!-- div.col-md-3 -->
 			<div class="col-md-9">
 				<div class="right-area">
-					<h4>Update Profile Address</h4>
+					<h4><?=$title;?></h4>
 					<hr>
-					<form method="POST" action="" enctype="multipart/form-data">
+					<form method="POST" action="" id="update_address_form" enctype="multipart/form-data">
 						<div class="from-group">
-							
+              <div class="address-error error">
+              </div>
 						</div>
 						<div class="form-group">
 							<!-- google api code -->
-                            <input id="autocomplete" class="form-control" placeholder="Enter your address" onFocus="geolocate()" type="text"/>
+                            <input id="autocomplete" name="new_address" class="form-control" placeholder="Enter your address" onFocus="geolocate()" type="text" value="<?=$address_db; ?>"/>
 							<!-- google api code -->
 						</div>
 						<!-- div.form-group -->
 						<div class="form-group">
-							<button type="button"  name="save_address" class="btn btn-success">Save Changes</button>
+							<button type="button"  name="save_address" class="btn btn-success" onclick="return add_address(this.form.autocomplete.value);">Save Changes</button>
 						</div>
 						<!-- div.form-group -->
 					</form>
@@ -61,8 +74,7 @@ if(!isset($_SESSION["id"]) || empty($_SESSION["id"]) ){
 	<!-- div.container -->
     <script type="text/javascript" src="../assets/js/bootstrap.bundle.min.js" ></script>
     <script type="text/javascript" src="../assets/js/simple.js"></script>
-    <script type="text/javascript" src="../assets/js/signup.js"></script>
-    <script type="text/javascript" src="../assets/js/login.js"></script>
+    
     <script>
 // This sample uses the Autocomplete widget to help the user select a
 // place, then it retrieves the address components associated with that
@@ -137,6 +149,7 @@ function geolocate() {
   <?php/*  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ4VYC_iEpZFRrtjIyn61W0ZpGZN1b6gg&libraries=places&callback=initAutocomplete"></script> */ ?>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ4VYC_iEpZFRrtjIyn61W0ZpGZN1b6gg&libraries=places&callback=initAutocomplete"
         async defer></script>
+        <script type="text/javascript" src="./js/profile.js"></script>
 </body>
 </html>
 <?php ob_end_flush(); ?>

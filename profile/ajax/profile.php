@@ -145,4 +145,34 @@ function update_name(){
 	}
 }
 update_name();
+function add_address(){
+	global $db;
+	if(isset($_GET["address"]) && !empty(trim($_GET["address"]))){
+		//echo json_encode($_REQUEST);
+		$new_address = trim($_REQUEST["new_address"]);
+		/*** getting if there is some value or not */
+		$get_address = $db->prepare("SELECT `address` FROM `users` WHERE `id` = :id");
+		$get_address->execute(array(":id"=>$_SESSION["id"]));
+		$res_address = $get_address->fetch(PDO::FETCH_OBJ);
+		$address_db = $res_address->address;
+		
+		/*** getting if there is some value or not */
+
+		/*** query for upding the address */
+		$update_address = $db->prepare("UPDATE `users` SET `address` = :address WHERE `id` = :id");
+		$update_address->execute(array(":address"=>$new_address,":id"=>$_SESSION["id"]));
+		if($update_address){
+			if(trim($address_db) != ''){
+				$_SESSION["address_success"] = "<i class='fa fa-check-circle'></i> Address Have Been Updated Successfully";
+			}else{
+				$_SESSION["address_success"] = "<i class='fa fa-check-circle'></i> Address Have Been Added Successfully";
+			}
+			echo json_encode(array("error"=>"success"));
+		}
+		/*** query for upding the address */
+
+	}
+}
+
+add_address();
 ?>

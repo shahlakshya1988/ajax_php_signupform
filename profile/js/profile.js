@@ -177,3 +177,35 @@ function update_name(name){
         });
     }
 }
+
+function add_address(address){
+    //alert(address);
+    address = address.trim();
+    if(address.length == "" || address.length == 0){
+        $(".address-error").html("Address Field Can't Be Blank");
+        $("#autocomplete").addClass("border-red");
+        $("#autocomplete").removeClass("border-green");
+    }else{
+        $(".address-error").html("");
+        $("#autocomplete").removeClass("border-red");
+        $("#autocomplete").addClass("border-green");
+        /**** ajax address */
+        $.ajax({
+            url:"ajax/profile.php?address=true",
+            data:$("#update_address_form").serialize(),
+            type:"POST",
+            dataType:"JSON",
+            beforeSend:function(){
+
+            },
+            success:function(feedback){
+                console.log(feedback);
+                if(feedback["error"]=="success"){
+                    location = "index.php";
+                }
+            }
+        });
+        /**** ajax address */
+    }
+    return false;
+}
