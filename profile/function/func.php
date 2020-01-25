@@ -18,6 +18,11 @@ function links(){
 	}else{
 		$bio = "<a href='#' data-target='#bio' data-toggle='modal'>Update Bio <i class='fa fa-pencil'></i></a>";
 	}
+	if(empty(trim($result->address))){
+		$address = "<a href='address.php' >Add Address <i class='fa fa-plus-circle'></i></a>";
+	}else{
+		$address = "<a href='address.php' >Update Address <i class='fa fa-pencil'></i></a>";
+	}
 	if(empty(trim($result->facebook))){
 		$facebook = "<a href='#' data-target='#facebookModal' data-toggle='modal'>Add Facebook <i class='fa fa-plus-circle'></i></a>";
 	}else{
@@ -32,6 +37,7 @@ function links(){
 		$photo
 		<li class='list-group-item first-li'>$photo_link</li>
 		<li class='list-group-item'>$bio</li>
+		<li class='list-group-item'>$address</li>
 		<li class='list-group-item'>$facebook</li>
 		<li class='list-group-item'>$linkedin</li>
 		<li class='list-group-item'><a href='#' data-target='#passwordModal' data-toggle='modal' >Update Password <i class='fa fa-pencil'></i> </a></li>	
