@@ -147,3 +147,33 @@ function change_password(old_password,new_password){
     }
     return false;
 }
+
+function update_name(name){
+    var name = name.trim();
+	var name_reg = /^[a-z ]+$/i;
+    if(name.length== 0 || name.length == ""){
+        $("#name_input").addClass("border-red");
+        $("#name_input").removeClass("border-green");
+        $(".name-error").html("Name Field Can't Be Blank");
+    }else if(!name_reg.test(name)){
+		$("#name_input").addClass("border-red");
+        $("#name_input").removeClass("border-green");
+        $(".name-error").html("Numbers, Special Chars Are Not Allowed");
+	}else{
+        $.ajax({
+            url:"ajax/profile.php?name=true",
+            data:$("#update_name_form").serialize(),
+            dataType:"JSON",
+            type:"POST",
+            beforeSend:function(){
+
+            },
+            success:function(feedback){
+                console.log(feedback);
+				if(feedback["error"]=="success"){
+					location = "index.php";
+				}
+            }
+        });
+    }
+}

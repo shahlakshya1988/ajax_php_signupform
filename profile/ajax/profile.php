@@ -112,7 +112,7 @@ function change_password(){
 			$update_new_password->bindParam(":password",$crcypt_new_password);
 			$update_new_password->execute();
 			if($update_new_password){
-				$_SESSION["password_success"] = "Password Updated Successfully !!!";
+				$_SESSION["password_success"] = "<i class='fa fa-check-circle'></i> Password Updated Successfully !!!";
 				echo json_encode(array("error"=>"success","new_password"=>trim($_POST["new_password"])));
 			}else{
 
@@ -126,4 +126,23 @@ function change_password(){
 	
 }
 change_password();
+function update_name(){
+	global $db;
+	if(isset($_GET["name"]) && !empty(trim($_GET["name"]))){
+		//echo json_encode($_REQUEST);
+		$new_name = trim($_POST["name_input"]);
+		$update = $db->prepare("UPDATE `users` SET `name` = :name where `id` = :id");
+		$update->bindParam(":name",$new_name);
+		$update->bindParam(":id",$_SESSION["id"]);
+		$update->execute();
+		if($update){
+			$_SESSION["name_success"] = "<i class='fa fa-check-circle'></i> Name Have Been Updated Successfully";
+			echo json_encode(array("error"=>"success"));
+		}else{
+			echo json_encode(array("error"=>"error"));
+		}
+
+	}
+}
+update_name();
 ?>
