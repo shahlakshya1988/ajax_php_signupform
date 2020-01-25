@@ -81,7 +81,17 @@ if(!isset($_SESSION["id"]) || empty($_SESSION["id"]) ){
 			<!-- div.col-md-3 -->
 			<div class="col-md-9">
 				<div class="right-area">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam qui hic corporis temporibus magnam esse reiciendis tempora, placeat ad! Rem reiciendis aliquid iste recusandae ea odio possimus quod! Eligendi atque sapiente totam, aliquam ex quod! Quos quo, obcaecati perspiciatis aut praesentium hic molestias optio magnam voluptas. Eaque, ad natus quaerat.
+					 <div class="row">
+					 	<div class="col-md-4">
+							 <h3>Profile Information</h3>
+						 </div>
+						 <div class="col-md-8">
+
+						 </div>
+					 </div> <!--  div.row -->
+					 <hr>
+					 <?php user_info(); ?>
+
 					<!-- bio.modal.php -->
 					<?php include "parts".DIRECTORY_SEPARATOR."bio.modal.php"; ?>
 					<!-- bio.modal.php -->

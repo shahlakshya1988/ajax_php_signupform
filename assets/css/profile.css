@@ -74,3 +74,12 @@
 	border-color:#ced4da;
 	border-radius: 3px;
 }
+.user-info{
+	margin-top:25px;
+}
+
+.user-info span{
+	color:#999;
+	font-weight: 500;
+	font-size:18px ;
+}

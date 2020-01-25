@@ -81,4 +81,44 @@ function update_picture(){
 		}
 	}
 }
+
+function user_info(){
+	global $db;
+	$user_id = $_SESSION["id"];
+	$query = $db->prepare("SELECT * FROM `users` where `id` = :id");
+	$query->execute(array(":id"=>$user_id));
+	$r = $query->fetch(PDO::FETCH_OBJ);
+	$name =ucwords($r->name);
+	if(!empty(trim($r->address))){
+		$address = trim($r->address);
+	}else{
+		$address="<a href='address.php' >Add Address <i class='fa fa-plus-circle'></i></a>";
+	}
+	if(!empty(trim($r->bio))){
+		$bio = trim($r->bio);
+	}else{
+		$bio = "<a href='#' data-target='#bio' data-toggle='modal'>Add Bio <i class='fa fa-plus-circle'></i></a>";
+	}
+
+	if(!empty(trim($r->facebook))){
+		$facebook = "<a href='{trim($r->facebook)}'><i class='fa fa-facebook'> Facebook</i></a>";
+	}else{
+		$facebook = "<a href='#' data-target='#facebookModal' data-toggle='modal'>Add Facebook <i class='fa fa-plus-circle'></i></a>";
+	}
+
+
+	if(!empty(trim($r->linkedin))){
+		$linkedin = "<a href='{trim($r->linkedin)}'><i class='fa fa-linkedin'></i> Linkedin</a>";
+	}else{
+		$linkedin = "<a href='#' data-target='#linkedinModal' data-toggle='modal'>Add Linkedin <i class='fa fa-plus-circle'></i></a>";
+	}
+	
+	echo "<div class='row user-info'><div class='col-md-3'><span>Name :</span> </div><div class='col-md-9'>{$name}</div></div>";
+	echo "<div class='row user-info'><div class='col-md-3'><span>Address :</span> </div><div class='col-md-9'>{$address}</div></div>";
+	echo "<div class='row user-info'><div class='col-md-3'><span>Bio :</span> </div><div class='col-md-9'>{$bio}</div></div>";
+	echo "<div class='row user-info'><div class='col-md-3'><span>Facebook :</span> </div><div class='col-md-9'>{$facebook}</div></div>";
+	echo "<div class='row user-info'><div class='col-md-3'><span>Linkedin :</span> </div><div class='col-md-9'>{$linkedin}</div></div>";
+
+
+}
 ?>
