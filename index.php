@@ -7,6 +7,7 @@
 ?>
     <!-- ==== NAVBAR ==== -->
     <?php require_once __DIR__.DIRECTORY_SEPARATOR."parts".DIRECTORY_SEPARATOR."navigation.php"; ?>
+<div class="showcase">
     <?php if(isset($_SESSION["unauthorized"]) && $_SESSION["unauthorized"]){ ?>
     <div class="alert alert-danger text-center all-msg">
         <strong>Please Enter Your Email and Password</strong>
@@ -151,5 +152,7 @@
             <!-- ==== div.col-md-5.content ==== -->
         </div>
     </div>
-	<!-- div.container -->
+    <!-- div.container -->
+</div>
+<!--  div.showcase -->
 <?php require_once __DIR__.DIRECTORY_SEPARATOR."parts".DIRECTORY_SEPARATOR."footer.php"; ?>

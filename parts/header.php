@@ -12,3 +12,6 @@
     <script type="text/javascript" src="./assets/js/jquery.min.js" ></script>
 </head>
 <body>
+    <video autoplay="true" muted loop  id="myVideo">
+        <source src="./assets/img/video.mp4" type="video/mp4">
+    </video>
