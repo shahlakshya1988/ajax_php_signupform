@@ -101,14 +101,14 @@ function user_info(){
 	}
 
 	if(!empty(trim($r->facebook))){
-		$facebook = "<a href='{trim($r->facebook)}'><i class='fa fa-facebook'> Facebook</i></a>";
+		$facebook = "<a href='".trim($r->facebook)."' target='_blank'><i class='fa fa-facebook'> Facebook</i></a>";
 	}else{
 		$facebook = "<a href='#' data-target='#facebookModal' data-toggle='modal'>Add Facebook <i class='fa fa-plus-circle'></i></a>";
 	}
 
 
 	if(!empty(trim($r->linkedin))){
-		$linkedin = "<a href='{trim($r->linkedin)}'><i class='fa fa-linkedin'></i> Linkedin</a>";
+		$linkedin = "<a href='".trim($r->linkedin)."' target='_blank'><i class='fa fa-linkedin'></i> Linkedin</a>";
 	}else{
 		$linkedin = "<a href='#' data-target='#linkedinModal' data-toggle='modal'>Add Linkedin <i class='fa fa-plus-circle'></i></a>";
 	}
@@ -120,5 +120,45 @@ function user_info(){
 	echo "<div class='row user-info'><div class='col-md-3'><span>Linkedin :</span> </div><div class='col-md-9'>{$linkedin}</div></div>";
 
 
+}
+
+function percentage(){
+	global $db;
+	$user_id = $_SESSION["id"];
+	$query = $db->prepare("SELECT * FROM `users` where id = :id");
+	$query->execute(array(":id"=>$user_id));
+	$result = $query->fetch(PDO::FETCH_OBJ);
+	$columnCount = $query->columnCount();
+	// var_dump($columnCount);
+	
+	// var_dump($result);
+	$i=1; // id is always there so 1
+	if(!empty(trim($result->name))){
+		$i++;
+	}
+	if(!empty(trim($result->email))){
+		$i++;
+	}
+	// columncount function counts password so we have to count
+	if(!empty(trim($result->password))){
+		$i++;
+	}
+	if(!empty(trim($result->image))){
+		$i++;
+	}
+	if(!empty(trim($result->bio))){
+		$i++;
+	}
+	if(!empty(trim($result->facebook))){
+		$i++;
+	}
+	if(!empty(trim($result->linkedin))){
+		$i++;
+	}
+	if(!empty(trim($result->address))){
+		$i++;
+	}
+	$percentage = ($i/$columnCount)*100;
+	return round($percentage,2);
 }
 ?>

@@ -86,7 +86,7 @@ if(!isset($_SESSION["id"]) || empty($_SESSION["id"]) ){
 							 <h3>Profile Information</h3>
 						 </div>
 						 <div class="col-md-8">
-
+							<?=percentage();?>% Complete
 						 </div>
 					 </div> <!--  div.row -->
 					 <hr>
