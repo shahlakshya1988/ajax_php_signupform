@@ -30,20 +30,7 @@
                <div class="signup-cover">                    
                     <div class="card">
                         <div class="card-header">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <h3 class="form-heading">Signup</h3>
-                                    <!-- h3.form-heading -->
-                                    <p>Account Creation is 100% Free, so please create the account</p>
-                                    <!-- p -->
-                                </div>
-                                <!-- div.col-md-9 -->
-                                <div class="col-md-3 text-right">
-                                    <i class="fa fa-pencil-square-o fa-3x"></i>
-                                </div>
-                                <!-- div.col-md-3.text-right  -->
-                            </div>
-                            <!-- div.row -->
+                        
                         </div>
                         <!-- div.card-header -->
                         <div class="card-body">
@@ -90,6 +77,13 @@
                             <!-- form -->
                         </div>
                         <!-- div.card-body -->
+                        <div class="form-icon">
+                            <div class="label-heading">
+                                <h5>Create New Account</h5>
+                            </div>
+                            <!-- div.label-heading -->
+                        </div>
+                        <!-- div.form-icon -->
                     </div>
                     <!-- div.card -->
                </div>
@@ -98,22 +92,7 @@
                 <!-- Login form -->
                 <div class="login-cover">
                     <div class="card">
-                            <div class="card-header">
-                                <div class="row">
-                                    <div class="col-md-9">
-                                        <h3 class="form-heading">Login</h3>
-                                        <!-- h3.form-heading -->
-                                        <p>Enter Login &amp; Password</p>
-                                        <!-- p -->
-                                    </div>
-                                    <!-- div.col-md-9 -->
-                                    <div class="col-md-3 text-right">
-                                        <i class="fa fa-lock fa-3x"></i>
-                                    </div>
-                                    <!-- div.col-md-3.text-right  -->
-                                </div>
-                                <!-- div.row -->
-                            </div>
+                            <div class="card-header"></div>
                             <!-- div.card-header -->
                             <div class="card-body">
                                 <form id="login-form">
@@ -156,6 +135,13 @@
                                 <!-- form -->
                             </div>
                             <!-- div.card-body -->
+                            <div class="form-icon">
+                                <div class="label-heading">
+                                    <h5>User Login</h5>
+                                </div>
+                                <!-- div.label-heading -->
+                            </div>
+                            <!-- div.form-icon -->
                         </div>
                         <!-- div.card -->
                 </div>
