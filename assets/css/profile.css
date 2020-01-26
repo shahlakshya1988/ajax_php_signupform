@@ -83,3 +83,13 @@
 	font-weight: 500;
 	font-size:18px ;
 }
+
+.green-percentage,.orange-percentage{
+	color:#2ce519;
+	font-size: 20px;
+	font-weight: 600;
+
+}
+.orange-percentage{
+	color:orangered;
+}
