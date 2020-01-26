@@ -89,6 +89,7 @@ function user_info(){
 	$query->execute(array(":id"=>$user_id));
 	$r = $query->fetch(PDO::FETCH_OBJ);
 	$name =ucwords($r->name);
+	$_SESSION["online_user"] = $name;
 	if(!empty(trim($r->address))){
 		$address = trim($r->address);
 	}else{

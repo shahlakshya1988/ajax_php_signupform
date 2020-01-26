@@ -1,4 +1,10 @@
 <?php require_once __DIR__.DIRECTORY_SEPARATOR."parts".DIRECTORY_SEPARATOR."header.php"; ?>
+<?php 
+    if(isset($_SESSION["id"])){
+        header("Location: profile/index.php");
+        die();
+    }
+?>
     <!-- ==== NAVBAR ==== -->
     <?php require_once __DIR__.DIRECTORY_SEPARATOR."parts".DIRECTORY_SEPARATOR."navigation.php"; ?>
     <?php if(isset($_SESSION["unauthorized"]) && $_SESSION["unauthorized"]){ ?>
@@ -13,7 +19,8 @@
             <!-- ==== div.col-md-7.content ==== -->
             <div class="col-md-7 content">
                 <h1>Its Always Free</h1>
-                <hr>
+                <?php if(isset($_SESSION["online_user"])){ echo "See You Next Time <span class='online_user'> ".$_SESSION["online_user"]." </span>"; } ?>
+                <hr>              
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas soluta eos harum, dolorum velit perspiciatis aperiam labore odio quaerat adipisci consectetur cumque consequatur optio pariatur nihil culpa ut voluptatum distinctio. Hic repellat iste laboriosam vero dolorum harum nam quas, at mollitia earum necessitatibus itaque, delectus nesciunt ab, architecto obcaecati. Id.</p>
             </div>
             <!-- ==== div.col-md-7.content ==== -->
