@@ -57,6 +57,21 @@ if(!isset($_SESSION["id"]) || empty($_SESSION["id"]) ){
 		<!-- div.row -->
 	</div>	
 	<!-- div.container -->
+	<!-- bio.modal.php -->
+	<?php include "parts".DIRECTORY_SEPARATOR."bio.modal.php"; ?>
+	<!-- bio.modal.php -->
+	<!-- facebook.modal.php -->
+	<?php include "parts".DIRECTORY_SEPARATOR."facebook.modal.php"; ?>
+	<!-- facebook.modal.php -->
+	<!-- linkedin.modal.php -->
+	<?php include "parts".DIRECTORY_SEPARATOR."linkedin.modal.php"; ?>
+	<!-- linkedin.modal.php -->
+	<!-- name.modal.php -->
+	<?php include "parts".DIRECTORY_SEPARATOR."name.modal.php"; ?>
+	<!-- name.modal.php -->
+	<!-- password.modal.php -->
+	<?php include "parts".DIRECTORY_SEPARATOR."password.modal.php"; ?>
+	<!-- password.modal.php -->
     <script type="text/javascript" src="../assets/js/bootstrap.bundle.min.js" ></script>
     <script type="text/javascript" src="../assets/js/simple.js"></script>
     <script type="text/javascript" src="../assets/js/signup.js"></script>

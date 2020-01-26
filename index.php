@@ -19,7 +19,7 @@
             <!-- ==== div.col-md-7.content ==== -->
             <div class="col-md-7 content">
                 <h1>Its Always Free</h1>
-                <?php if(isset($_SESSION["online_user"])){ echo "See You Next Time <span class='online_user'> ".$_SESSION["online_user"]." </span>"; } ?>
+                <?php if(isset($_SESSION["online_user"])){ echo "See You Next Time <span class='online_user'> ".$_SESSION["online_user"]." </span>"; } unset($_SESSION["online_user"]); ?>
                 <hr>              
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas soluta eos harum, dolorum velit perspiciatis aperiam labore odio quaerat adipisci consectetur cumque consequatur optio pariatur nihil culpa ut voluptatum distinctio. Hic repellat iste laboriosam vero dolorum harum nam quas, at mollitia earum necessitatibus itaque, delectus nesciunt ab, architecto obcaecati. Id.</p>
             </div>
